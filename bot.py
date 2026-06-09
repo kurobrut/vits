@@ -295,45 +295,6 @@ async def cf(ctx):
         await msg.edit(content=f"❌ Failed: {e}")
 
 # =======================================================
-# ❓ HELP COMMAND
-# =======================================================
-@bot.command(name="help")
-async def help_command(ctx):
-    embed = discord.Embed(
-        title="🤖 Bot Commands",
-        description="Here are all available commands:",
-        color=discord.Color.blurple()
-    )
-
-    embed.add_field(
-        name="!pot (aliases: !f, !F)",
-        value="Apply a decorative pot frame to your image(s).\n**Usage:** `!pot` (attach 1–10 images or reply to a message with images)",
-        inline=False
-    )
-
-    embed.add_field(
-        name="!collage",
-        value="Create a collage from multiple images.\n**Usage:** `!collage` (attach 2–10 images)",
-        inline=False
-    )
-
-    embed.add_field(
-        name="!cf",
-        value="Create a collage and apply a pot frame to it.\n**Usage:** `!cf` (attach 2–10 images)",
-        inline=False
-    )
-
-    embed.add_field(
-        name="!help",
-        value="Display this help message.",
-        inline=False
-    )
-
-    embed.set_footer(text="💡 You can also reply to a message with images when using !pot")
-
-    await ctx.send(embed=embed)
-
-# =======================================================
 @bot.event
 async def on_ready():
     print(f"✅ {bot.user} online | !collage + !pot ready")
